@@ -21,8 +21,10 @@ jobs:
     steps:
       - name: Check out source
         uses: actions/checkout@v4
-      - name: Check JavaScript syntax
-        run: node --check script.js
+      - name: Check JavaScript syntax and behavior
+        run: |
+          node --check script.js
+          node --test tests/behavior.test.cjs
       - name: Verify page assets and demo disclosures
         run: |
           test -s index.html
