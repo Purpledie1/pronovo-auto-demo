@@ -72,10 +72,11 @@ jobs:
     steps:
       - name: Check out source
         uses: actions/checkout@v4
+      # A repository admin must enable Pages in Settings > Pages first.
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
         with:
-          enablement: true
+          enablement: false
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:

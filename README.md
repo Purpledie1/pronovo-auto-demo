@@ -17,4 +17,4 @@
 
 ## GitHub Pages
 
-Workflow `.github/workflows/pages.yml` проверяет JavaScript и структуру страницы для pull request и публикует содержимое корня репозитория на GitHub Pages при push в `main`. Настройка Pages выполняется в Actions через `configure-pages`.
+Workflow `.github/workflows/pages.yml` проверяет JavaScript и структуру страницы для pull request и публикует содержимое корня репозитория на GitHub Pages при push в `main`. Перед первой публикацией администратор репозитория должен открыть **Settings → Pages** и выбрать **Build and deployment → Source: GitHub Actions**. Токен workflow не имеет прав администратора для создания Pages site; после этой однократной настройки workflow сможет публиковать сайт.
