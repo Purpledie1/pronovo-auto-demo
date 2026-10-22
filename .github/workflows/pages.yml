@@ -1,0 +1,85 @@
+name: Publish portfolio to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    name: Validate static site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Check JavaScript syntax and behavior
+        run: |
+          node --check script.js
+          node --test tests/behavior.test.cjs
+      - name: Verify page assets and demo disclosures
+        run: |
+          test -s index.html
+          test -s styles.css
+          test -s assets/hero-scene.svg
+          test -s assets/road-line.svg
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          page = Path("index.html").read_text(encoding="utf-8")
+
+          class PageCheck(HTMLParser):
+              ids = set()
+              language = None
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  if tag == "html":
+                      self.language = attrs.get("lang")
+                  if attrs.get("id"):
+                      self.ids.add(attrs["id"])
+
+          parser = PageCheck()
+          parser.feed(page)
+          assert parser.language == "ru", "page language must be Russian"
+          assert {"car-grid", "budget", "budget-range", "estimate-total"} <= parser.ids
+          lower = page.casefold()
+          assert "демо" in lower and "вымышлены" in lower
+          assert "не является официальным сайтом" in lower
+          print("Russian page, key controls and demo disclaimers verified")
+          PY
+
+  deploy:
+    name: Deploy to GitHub Pages
+    if: github.event_name != 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: Upload static site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: Deploy site
+        id: deployment
+        uses: actions/deploy-pages@v4
