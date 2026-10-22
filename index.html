@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#141413">
+  <meta name="description" content="Независимый концепт-портфолио Pronovo — подбор и заказ автомобиля. Демонстрационные каталог и расчёт.">
+  <title>Pronovo — автомобиль начинается с выбора</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Pronovo — на главную"><span class="brand-mark">P<span>.</span></span><span class="brand-name">PRONOVO<small>ИРКУТСК · АВТО ПОД ЗАКАЗ</small></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Открыть меню"><span></span><span></span></button>
+    <nav class="main-nav" id="main-nav" aria-label="Главная навигация">
+      <a href="#catalog">Автомобили</a><a href="#process">Как работаем</a><a href="#estimate">Расчёт</a>
+    </nav>
+    <a class="header-contact" href="tel:+79383383441"><span class="contact-label">На связи</span><strong>+7 938 338-34-41</strong></a>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-art" src="assets/hero-scene.svg" alt="Иллюстрация автомобиля на ночной дороге" fetchpriority="high">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow light-eyebrow"><span class="eyebrow-dot"></span> ИРКУТСК · АВТОМОБИЛИ ПОД ЗАКАЗ</p>
+        <h1 id="hero-title">Ваша дорога.<br><em>Ваш выбор.</em></h1>
+        <p class="hero-copy">Подбор, проверка и доставка автомобиля — с вниманием к каждой детали пути.</p>
+        <div class="hero-actions"><a class="button button-red" href="#catalog">Выбрать автомобиль <span aria-hidden="true">↗</span></a><a class="text-link light-link" href="#process">Узнать, как это работает <span aria-hidden="true">↓</span></a></div>
+      </div>
+      <div class="hero-bottom"><span>НЕЗАВИСИМЫЙ КОНЦЕПТ-САЙТ</span><span>ДЕМО-КАТАЛОГ · НЕ АКТУАЛЬНЫЕ ПРЕДЛОЖЕНИЯ</span><span class="hero-index">01 / 04</span></div>
+      <span class="hero-vertical">PRONOVO · IRKUTSK</span>
+    </section>
+
+    <section class="intro section-pad" aria-label="О концепции">
+      <div class="intro-kicker"><span class="section-no">01</span><span>СВОБОДА ВЫБОРА</span></div>
+      <div class="intro-body"><h2>Не просто найти машину.<br><em>Найти свою.</em></h2><p>Спокойный путь от первого запроса до ключей в руках. Мы собрали этот концепт, чтобы показать, каким может быть цифровое знакомство с сервисом подбора и заказа авто.</p><a class="text-link dark-link" href="#process">Посмотреть этапы <span aria-hidden="true">↘</span></a></div>
+      <div class="intro-stamp"><span>ДЛЯ ВАШЕГО<br>МАРШРУТА</span><b>↗</b></div>
+    </section>
+
+    <section class="catalog section-pad" id="catalog" aria-labelledby="catalog-title">
+      <div class="section-heading"><div><p class="eyebrow"><span class="section-no">02</span> ПОДБОРКА ДЛЯ ВДОХНОВЕНИЯ</p><h2 id="catalog-title">Найдите <em>своё.</em></h2></div><p class="section-note">Модели, цены и наличие ниже —<br>только демонстрационные данные.</p></div>
+      <div class="catalog-tools">
+        <label class="search-box"><span class="sr-only">Поиск по моделям</span><span aria-hidden="true">⌕</span><input id="car-search" type="search" placeholder="Марка или модель" autocomplete="off"><kbd>⌘ K</kbd></label>
+        <div class="filters" role="group" aria-label="Фильтр по типу автомобиля"><button class="filter is-active" data-filter="all" aria-pressed="true">Все <span>04</span></button><button class="filter" data-filter="suv" aria-pressed="false">Кроссоверы</button><button class="filter" data-filter="sedan" aria-pressed="false">Седаны</button><button class="filter" data-filter="sport" aria-pressed="false">Спорт</button></div>
+        <label class="region-select"><span class="sr-only">Фильтр по региону</span><select id="region-filter"><option value="all">Все регионы</option><option value="asia">Азия</option><option value="europe">Европа</option><option value="usa">США</option></select><span aria-hidden="true">⌄</span></label>
+      </div>
+      <div class="demo-banner"><span class="demo-icon">i</span><p>Это концепт: карточки не являются предложениями о продаже. Характеристики, цены и наличие вымышлены.</p><span class="demo-badge">ДЕМО</span></div>
+      <div class="car-grid" id="car-grid" aria-live="polite">
+        <article class="car-card" data-type="suv" data-region="asia" data-search="toyota land cruiser 300 внедорожник япония">
+          <div class="car-visual visual-red"><span class="car-tag">01 / ВНЕДОРОЖНИК</span><svg viewBox="0 0 420 210" aria-hidden="true"><path class="car-shadow" d="M46 164h330v15H46z"/><path class="car-body" d="M70 139l16-39q8-18 27-23l66-8 38-33q9-8 22-8h61q18 0 31 15l37 43 26 13q12 5 15 19l4 26-20 15H62q-9-2 8-20z"/><path class="car-glass" d="M182 73l38-31q5-4 14-4h30v45h-86zm93-35h23q12 0 22 12l30 33h-75z"/><path class="car-trim" d="M82 131h312M165 132l3 34m118-36 1 35"/><circle class="wheel" cx="132" cy="158" r="28"/><circle class="wheel-inner" cx="132" cy="158" r="12"/><circle class="wheel" cx="338" cy="158" r="28"/><circle class="wheel-inner" cx="338" cy="158" r="12"/><path class="light" d="M379 111h21l9 13h-30z"/></svg><span class="visual-caption">LAND CRUISER<br><b>300</b></span></div>
+          <div class="car-info"><div><p class="car-region">ЯПОНИЯ <span>·</span> DEMO</p><h3>Toyota Land Cruiser 300</h3><p class="car-spec">2022 · 3.5 л · полный привод</p></div><div class="car-price">от 8,4 млн ₽<small>условная цена</small></div></div><a class="card-link" href="#estimate" aria-label="Рассчитать Toyota Land Cruiser 300">Собрать расчёт <span>↗</span></a>
+        </article>
+        <article class="car-card" data-type="sedan" data-region="asia" data-search="lexus es 300h седан япония">
+          <div class="car-visual visual-gold"><span class="car-tag">02 / СЕДАН</span><svg viewBox="0 0 420 210" aria-hidden="true"><path class="car-shadow" d="M46 164h330v15H46z"/><path class="car-body" d="M54 141l21-32q10-14 31-19l73-10 47-34q12-8 27-8h55q17 0 28 13l37 39 30 10q13 4 17 17l5 27-18 17H51q-8-3 3-20z"/><path class="car-glass" d="M190 77l44-32q4-3 13-3h24v44h-81zm91-35h21q11 0 20 10l31 34h-72z"/><path class="car-trim" d="M73 133h333m-234-1 2 34m119-35 1 36"/><circle class="wheel" cx="131" cy="158" r="27"/><circle class="wheel-inner" cx="131" cy="158" r="11"/><circle class="wheel" cx="344" cy="158" r="27"/><circle class="wheel-inner" cx="344" cy="158" r="11"/><path class="light" d="M390 111h23l7 12h-29z"/></svg><span class="visual-caption">LEXUS<br><b>ES 300h</b></span></div>
+          <div class="car-info"><div><p class="car-region">ЯПОНИЯ <span>·</span> DEMO</p><h3>Lexus ES 300h</h3><p class="car-spec">2021 · 2.5 л · гибрид</p></div><div class="car-price">от 4,1 млн ₽<small>условная цена</small></div></div><a class="card-link" href="#estimate" aria-label="Рассчитать Lexus ES 300h">Собрать расчёт <span>↗</span></a>
+        </article>
+        <article class="car-card" data-type="sport" data-region="europe" data-search="porsche 911 carrera спорт купе германия">
+          <div class="car-visual visual-blue"><span class="car-tag">03 / КУПЕ</span><svg viewBox="0 0 420 210" aria-hidden="true"><path class="car-shadow" d="M46 164h330v15H46z"/><path class="car-body" d="M47 143l16-23q10-15 28-19l45-8 30-36q14-17 37-20l60-7q28-2 47 12l40 33 34 11q17 5 22 21l6 29-17 15H48q-7-3-1-8z"/><path class="car-glass" d="M184 72l28-29q5-4 15-5l38-3 8 51h-98zm99-36 17 2q12 2 21 10l34 29h-64z"/><path class="car-trim" d="M58 133h350m-235-2 2 34m125-35 1 37"/><circle class="wheel" cx="129" cy="158" r="27"/><circle class="wheel-inner" cx="129" cy="158" r="11"/><circle class="wheel" cx="348" cy="158" r="27"/><circle class="wheel-inner" cx="348" cy="158" r="11"/><path class="light" d="M393 112h24l7 13h-30z"/></svg><span class="visual-caption">911<br><b>CARRERA</b></span></div>
+          <div class="car-info"><div><p class="car-region">ЕВРОПА <span>·</span> DEMO</p><h3>Porsche 911 Carrera</h3><p class="car-spec">2020 · 3.0 л · задний привод</p></div><div class="car-price">от 12,8 млн ₽<small>условная цена</small></div></div><a class="card-link" href="#estimate" aria-label="Рассчитать Porsche 911 Carrera">Собрать расчёт <span>↗</span></a>
+        </article>
+        <article class="car-card" data-type="suv" data-region="usa" data-search="ford bronco внедорожник сша">
+          <div class="car-visual visual-green"><span class="car-tag">04 / ВНЕДОРОЖНИК</span><svg viewBox="0 0 420 210" aria-hidden="true"><path class="car-shadow" d="M46 164h330v15H46z"/><path class="car-body" d="M66 82q0-11 13-11h212q12 0 22 11l31 36h31q13 0 18 11l8 23-16 12H53l-9-11 8-26q3-12 14-17z"/><path class="car-glass" d="M91 80h72v41H87zm82 0h72v41h-72zm81 0h32q10 0 17 9l26 32h-75z"/><path class="car-trim" d="M53 132h348m-231-1 2 32m108-32 1 34"/><circle class="wheel" cx="128" cy="158" r="27"/><circle class="wheel-inner" cx="128" cy="158" r="11"/><circle class="wheel" cx="335" cy="158" r="27"/><circle class="wheel-inner" cx="335" cy="158" r="11"/><path class="light" d="M387 115h26l5 12h-30z"/></svg><span class="visual-caption">BRONCO<br><b>BADLANDS</b></span></div>
+          <div class="car-info"><div><p class="car-region">США <span>·</span> DEMO</p><h3>Ford Bronco Badlands</h3><p class="car-spec">2022 · 2.7 л · полный привод</p></div><div class="car-price">от 6,9 млн ₽<small>условная цена</small></div></div><a class="card-link" href="#estimate" aria-label="Рассчитать Ford Bronco Badlands">Собрать расчёт <span>↗</span></a>
+        </article>
+      </div>
+      <p class="no-results" id="no-results" hidden>По вашему запросу ничего не найдено. Попробуйте изменить фильтры.</p>
+      <div class="catalog-foot"><span>04 / ДЕМОНСТРАЦИОННЫХ КАРТОЧКИ</span><a class="text-link dark-link" href="https://pronovoavto.ru/catalog" target="_blank" rel="noopener noreferrer">Актуальный каталог компании <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <section class="process section-pad" id="process" aria-labelledby="process-title">
+      <div class="process-top"><p class="eyebrow light-eyebrow"><span class="section-no">03</span> ПРОЗРАЧНОСТЬ НА КАЖДОМ ЭТАПЕ</p><p class="process-aside">Вы задаёте направление.<br>Мы помогаем пройти путь.</p></div>
+      <div class="process-heading"><h2 id="process-title">От первого<br>«хочу» <em>до ключей.</em></h2><p>Концептуальная схема: детали, сроки и условия сделки нужно уточнять у компании.</p></div>
+      <div class="steps">
+        <article class="step"><span class="step-no">01</span><div><h3>Знакомимся</h3><p>Обсуждаем задачу, бюджет и пожелания к будущему автомобилю.</p></div><span class="step-arrow">↘</span></article>
+        <article class="step"><span class="step-no">02</span><div><h3>Подбираем</h3><p>Ищем варианты и вместе изучаем историю, состояние и фотографии.</p></div><span class="step-arrow">↘</span></article>
+        <article class="step"><span class="step-no">03</span><div><h3>Согласуем</h3><p>До любых действий выбираем конкретный вариант и проговариваем условия.</p></div><span class="step-arrow">↘</span></article>
+        <article class="step"><span class="step-no">04</span><div><h3>Доставляем</h3><p>Сопровождаем оформление и путь автомобиля до вашего города.</p></div><span class="step-arrow">↘</span></article>
+      </div>
+      <div class="process-footer"><span>БЕЗ СПЕШКИ. С ПОНЯТНЫМ ПЛАНОМ.</span><a class="button button-outline" href="#estimate">Обсудить мой маршрут <span>↗</span></a></div>
+    </section>
+
+    <section class="estimate section-pad" id="estimate" aria-labelledby="estimate-title">
+      <div class="estimate-copy"><p class="eyebrow"><span class="section-no">04</span> ПЕРВАЯ ПРИКИДКА</p><h2 id="estimate-title">Прикинем<br><em>направление.</em></h2><p>Небольшой калькулятор для знакомства с форматом. Он не учитывает реальные условия покупки, доставки и оформления.</p><div class="estimate-stamp"><span>НЕ ОФЕРТА<br>НЕ ТАРИФ</span><b>✳</b></div></div>
+      <div class="calculator"><div class="calculator-head"><span>ДЕМО-КАЛЬКУЛЯТОР</span><span class="calc-live"><i></i> УСЛОВНО</span></div>
+        <label class="field-label" for="budget">Бюджет на автомобиль</label><div class="budget-field"><input id="budget" type="number" min="500000" max="30000000" step="100000" value="3000000" inputmode="numeric"><span>₽</span></div>
+        <div class="range-wrap"><input id="budget-range" type="range" min="500000" max="15000000" step="100000" value="3000000" aria-label="Бюджет на автомобиль"><div class="range-labels"><span>500 тыс.</span><span>15 млн</span></div></div>
+        <label class="field-label" for="calc-region">Возможное направление</label><div class="select-wrap"><select id="calc-region"><option value="asia">Азия</option><option value="europe">Европа</option><option value="usa">США</option></select><span aria-hidden="true">⌄</span></div>
+        <div class="calc-result"><div><span>Ориентир в демо-сценарии</span><strong id="estimate-total">3 600 000 ₽</strong></div><span class="calc-arrow">↗</span></div>
+        <p class="calc-disclaimer">Иллюстративный расчёт: к бюджету добавлено условные 20%. Это не фактическая стоимость, тариф или предложение Pronovo. Точный расчёт — только после консультации.</p>
+        <a class="button button-red calc-cta" href="https://pronovoavto.ru/" target="_blank" rel="noopener noreferrer">Перейти на сайт компании <span>↗</span></a>
+      </div>
+    </section>
+
+    <section class="manifest section-pad">
+      <div class="manifest-image"><img src="assets/road-line.svg" alt="Минималистичная иллюстрация автомобиля на открытой дороге" loading="lazy"><span class="manifest-note">ДОРОГА НАЧИНАЕТСЯ<br>С ХОРОШЕГО ВОПРОСА</span></div>
+      <div class="manifest-copy"><p class="eyebrow"><span class="section-no">05</span> ХОРОШИЙ ВЫБОР ЧУВСТВУЕТСЯ</p><blockquote>«Правильный автомобиль — тот, который подходит именно <em>вашей жизни.</em>»</blockquote><p>Независимый визуальный концепт для знакомства с направлением услуги. Не официальный сайт компании и не источник условий покупки.</p><a class="text-link dark-link" href="https://pronovoavto.ru/" target="_blank" rel="noopener noreferrer">Официальный сайт ProNovo <span>↗</span></a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main"><a class="brand footer-brand" href="#top"><span class="brand-mark">P<span>.</span></span><span class="brand-name">PRONOVO<small>НЕЗАВИСИМЫЙ КОНЦЕПТ-САЙТ</small></span></a><div class="footer-contact"><span>СВЯЗАТЬСЯ С КОМПАНИЕЙ</span><a href="tel:+79383383441">+7 938 338-34-41</a><small>Номер указан на официальном сайте Pronovo.</small></div><div class="footer-links"><a href="https://pronovoavto.ru/" target="_blank" rel="noopener noreferrer">Официальный сайт ↗</a><a href="https://2gis.ru/irkutsk/firm/70000001089072638" target="_blank" rel="noopener noreferrer">Pronovo в 2ГИС ↗</a></div></div>
+    <div class="footer-bottom"><p>© 2025 PRONOVO — НЕЗАВИСИМЫЙ КОНЦЕПТ. НЕ ЯВЛЯЕТСЯ ОФИЦИАЛЬНЫМ САЙТОМ.</p><p>МОДЕЛИ, ЦЕНЫ, НАЛИЧИЕ И РАСЧЁТЫ ВЫМЫШЛЕНЫ И ПОКАЗАНЫ ДЛЯ ДЕМО.</p><a href="#top">НАВЕРХ ↑</a></div>
+  </footer>
+</body>
+</html>
